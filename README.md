@@ -5,7 +5,7 @@ Instrucoes para instalacao e utilizacao da nossa aplicacao
 ## Instalacao
 1. clonar o repositorio
 git clone <url_do_repositorio>
-cd projeto-gestor
+cd Gestor-de-Despesas-e-Orcamentos
 
 ## Comandos principais
 1. Adicionar movimento
