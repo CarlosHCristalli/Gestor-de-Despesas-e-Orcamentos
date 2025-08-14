@@ -1,0 +1,20 @@
+[
+  {
+    "categoria": "salario",
+    "despesa": 0.0,
+    "receita": 500.0,
+    "saldo": 500.0
+  },
+  {
+    "categoria": "restaurante",
+    "despesa": 110.0,
+    "receita": 0.0,
+    "saldo": -110.0
+  },
+  {
+    "categoria": "supermercado",
+    "despesa": 45.0,
+    "receita": 0.0,
+    "saldo": -45.0
+  }
+]

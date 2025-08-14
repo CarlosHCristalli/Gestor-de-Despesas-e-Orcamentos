@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "categoria": "supermercado",
+    "limite": 40.0,
+    "periodo": "semanal"
+  },
+  {
+    "id": 2,
+    "categoria": "restaurante",
+    "limite": 100.0,
+    "periodo": "mensal"
+  }
+]

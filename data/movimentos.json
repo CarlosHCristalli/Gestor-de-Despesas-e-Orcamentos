@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "tipo": "despesa",
+    "data": "2025-08-12T12:10:37",
+    "valor": 15.0,
+    "categoria": "supermercado",
+    "descricao": "compras 1",
+    "metodo": ""
+  },
+  {
+    "id": 2,
+    "tipo": "despesa",
+    "data": "2025-08-12T12:10:44",
+    "valor": 30.0,
+    "categoria": "supermercado",
+    "descricao": "compras 2",
+    "metodo": ""
+  },
+  {
+    "id": 3,
+    "tipo": "despesa",
+    "data": "2025-08-12T12:15:46",
+    "valor": 60.0,
+    "categoria": "restaurante",
+    "descricao": "almoço",
+    "metodo": ""
+  },
+  {
+    "id": 4,
+    "tipo": "receita",
+    "data": "2025-08-12T12:15:52",
+    "valor": 500.0,
+    "categoria": "salario",
+    "descricao": "salário",
+    "metodo": ""
+  },
+  {
+    "id": 5,
+    "tipo": "despesa",
+    "data": "2025-08-12T12:15:58",
+    "valor": 50.0,
+    "categoria": "restaurante",
+    "descricao": "jantar",
+    "metodo": ""
+  }
+]
