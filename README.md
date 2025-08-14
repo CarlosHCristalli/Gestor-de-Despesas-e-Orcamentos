@@ -1,5 +1,13 @@
 Instrucoes para instalacao e utilizacao da nossa aplicacao
 
+## Estrutura do projeto
+
+## Instalacao
+1. clonar o repositorio
+git clone <url_do_repositorio>
+cd projeto-gestor
+
+## Comandos principais
 1. Adicionar movimento
 Regista uma despesa ou receita.
 A data é preenchida automaticamente com a hora atual do sistema.
@@ -53,25 +61,6 @@ Opções específicas para top-categorias:
 --mov-tipo → despesa ou receita
 
 
+## Testes:
 
-
-
-Testes:
-
-Teste 1 — Orçamento semanal com overspend
-
-py -m gestor.cli add-orc --cat supermercado --limite 40 --periodo semanal
-py -m gestor.cli add-mov --tipo despesa --valor 15 --cat supermercado --desc "compras 1"
-py -m gestor.cli add-mov --tipo despesa --valor 30 --cat supermercado --desc "compras 2"
-
-Teste 2 — Orçamento mensal + receitas/despesas
-py -m gestor.cli add-orc --cat restaurante --limite 100 --periodo mensal
-py -m gestor.cli add-mov --tipo despesa --valor 60 --cat restaurante --desc "almoço"
-py -m gestor.cli add-mov --tipo receita --valor 500 --cat salario --desc "salário"
-py -m gestor.cli add-mov --tipo despesa --valor 50 --cat restaurante --desc "jantar"
-py -m gestor.cli list-mov --cat restaurante --tipo despesa
-
-Teste 3 — Filtros por intervalo de datas, categoria e texto
-(Assume que já tens movimentos registados)
-
-py -m gestor.cli list-mov --inicio 2025-08-01 --fim 2025-08-31T23:59:59 --cat supermercado --tipo despesa --texto compras
+pythin -m tests.test_basico
