@@ -1,4 +1,4 @@
-#gestor/service.py
+#finance/service.py
 from .models import Movimento, TipoMovimento, Orcamento
 from .storage import Storage
 from datetime import datetime
@@ -22,7 +22,11 @@ class FinanceService:
             data_iso = datetime.now().isoformat(timespec="seconds")
 
         mov = Movimento(novo_id,tipo,valor,categoria,descricao,metodo_pagamento,data_iso)
-        mov.validar()
+        try:
+            mov.validar()
+        except ValueError as e:
+            print(f"Erro ao adicionar movimento: {e}")
+            return None, None
 
         movimentos = self.storage.carregar_movimentos()
         movimentos.append(mov.to_dict())
@@ -58,7 +62,11 @@ class FinanceService:
     def add_orcamento(self,categoria, limite, periodo="mensal"):
         novo_id = self.storage.proximo_id_orcamento()
         orc = Orcamento(novo_id,categoria,limite,periodo)
-        orc.validar()
+        try:
+            orc.validar()
+        except ValueError as e:
+            print(f"Erro ao criar orçamento: {e}")
+            return None, None
 
         orcs = self.storage.carregar_orcamentos()
         updated = False

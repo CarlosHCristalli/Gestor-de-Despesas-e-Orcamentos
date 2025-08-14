@@ -1,4 +1,4 @@
-#gestor/models.py
+#finance/models.py
 #Criar uma classe e validar com if/raise
 from enum import Enum
 from datetime import datetime

@@ -1,4 +1,4 @@
-# gestor/reports.py
+# finance/reports.py
 # Relatórios: totais-por-cat, cashflow-semanal, top-categorias, alertas + export CSV/JSON
 
 import os

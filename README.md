@@ -1,18 +1,31 @@
 Instrucoes para instalacao e utilizacao da nossa aplicacao
 
 ## Estrutura do projeto
+finance/
+    cli.py              # Interface de linha de comandos
+    models.py           # Definições de classes e validações
+    service.py          # Regras de negócio
+    storage.py          # Persistência em ficheiros JSON
+    reports.py          # Relatórios e exportações
+tests/
+    test_cli.py         # Testes da CLI
+    test_financas.py    # Testes do sistema
+data/                   # Dados persistentes (movimentos, orçamentos)
 
 ## Instalacao
 1. clonar o repositorio
 git clone <url_do_repositorio>
 cd projeto-gestor
 
+2. instalar dependencias
+pip install pytest pytest-cov
+
 ## Comandos principais
 1. Adicionar movimento
 Regista uma despesa ou receita.
 A data é preenchida automaticamente com a hora atual do sistema.
 
-Exemplo: python -m gestor.cli add-mov --tipo despesa --valor 12.50 --cat supermercado --metodo MBWay --desc "Leite e pão"
+Exemplo: python -m finance.cli add-mov --tipo despesa --valor 12.50 --cat supermercado --metodo MBWay --desc "Leite e pão"
 
 Opções:
 --tipo → despesa ou receita (obrigatório)
@@ -24,13 +37,13 @@ Opções:
 2. Listar movimentos
 Mostra todos os movimentos registados.
 
-Exemplo: python -m gestor.cli list-mov
+Exemplo: python -m finance.cli list-mov
 
 
 3. Adicionar orçamento
 Cria ou atualiza um orçamento para uma categoria.
 
-Exemplo: python -m gestor.cli add-orc --cat supermercado --limite 50 --periodo mensal
+Exemplo: python -m finance.cli add-orc --cat supermercado --limite 50 --periodo mensal
 
 Opções:
 --cat → categoria (obrigatório)
@@ -40,7 +53,7 @@ Opções:
 4. Listar orçamentos
 Mostra todos os orçamentos registados.
 
-Exemplo: python -m gestor.cli list-orc
+Exemplo: python -m finance.cli list-orc
 
 5. Gerar relatórios
 Tipos de relatórios disponíveis:
@@ -50,7 +63,7 @@ Tipos de relatórios disponíveis:
 -alertas
 
 Exemplo:
-python -m gestor.cli relatorio --tipo totais-por-cat --inicio 2025-08-01 --fim 2025-08-31T23:59:59 --saida csv
+python -m finance.cli relatorio --tipo totais-por-cat --inicio 2025-08-01 --fim 2025-08-31T23:59:59 --saida csv
 
 Opções gerais:
 --inicio / --fim → intervalo de datas
@@ -62,5 +75,4 @@ Opções específicas para top-categorias:
 
 
 ## Testes:
-
-pythin -m tests.test_basico
+pytest --cov=finance --cov-report=term-missing

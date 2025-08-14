@@ -1,4 +1,4 @@
-#gestor/cli.py
+#finance/cli.py
 #Ler comandos e argumentos no terminal e realizar os pedidos
 import os, argparse
 from .storage import Storage
